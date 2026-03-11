@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fortune-bg: #fdfaf5;
+  --color-fortune-yellow: #fde047;
+  --color-fortune-orange: #f97316;
+  --color-fortune-brown: #78350f;
+  
+  --font-sans: 'Inter', 'Outfit', sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-fortune-bg);
+    color: var(--color-fortune-brown);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #ffffff 0%, #fdfaf5 100%);
+  }
+}
+
+/* Custom animation for sparkles */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
